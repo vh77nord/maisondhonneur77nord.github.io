@@ -44,7 +44,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:12px; /* espace icône et texte */
+  gap:12px;
   padding:16px;
   margin:12px auto;
   border-radius:10px;
@@ -61,7 +61,6 @@ body{
 .semence{background:#9B59B6;}
 .facebook{background:#1877F2;}
 
-/* carré pour logo facebook */
 .facebook i{
   background:white;
   color:#1877F2;
@@ -75,12 +74,11 @@ body{
 
 .hidden{display:none;}
 
-/* VIDEO CENTRÉE PARFAITEMENT */
 .video-container{
   position:relative;
   padding-bottom:56.25%;
   height:0;
-  margin:40px auto; /* centrer horizontalement */
+  margin:40px auto;
   max-width:700px;
 }
 
@@ -123,7 +121,8 @@ textarea{
 
 <div class="container">
 
-<img src="MHchelles.jpeg" class="logo">
+<!-- LOGO -->
+<img src="MHChelles.jpeg" class="logo" alt="Logo Maison d'Honneur">
 
 <h2>Maison d'Honneur Seine et Marne Nord</h2>
 
@@ -163,11 +162,11 @@ Et voici, une voix fit entendre des cieux ces paroles : Celui-ci est mon Fils bi
 
   <div class="label">PayPal</div>
   <a href="https://www.paypal.me/IbrahimNAHO" target="_blank">
-    <img src="paypal.jpeg" class="qr">
+    <img src="PAYPAL.jpeg" class="qr" alt="PayPal">
   </a>
 
   <div class="label">Wero / Paylib</div>
-  <img src="wero.jpeg" class="qr" onclick="alert('Scannez avec votre application bancaire')">
+  <img src="WERO.jpeg" class="qr" alt="Wero" onclick="alert('Scannez avec votre application bancaire')">
 
   <br>
   <div class="button" style="background:#aaa;" onclick="retour()">Retour</div>
