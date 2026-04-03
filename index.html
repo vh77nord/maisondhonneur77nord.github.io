@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison d'Honneur Seine et Marne Nord</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:'Poppins', sans-serif;
+  background:#FFE9D6;
+  text-align:center;
+}
+
+.container{
+  max-width:900px;
+  width:95%;
+  margin:30px auto;
+  padding:50px 30px;
+  background:white;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+}
+
+.logo{
+  width:100%;
+  max-width:500px;
+  margin-bottom:20px;
+}
+
+.verse{
+  font-style:italic;
+  color:#555;
+  margin:20px auto;
+  max-width:600px;
+  line-height:1.6;
+}
+
+.button{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px; /* espace icône et texte */
+  padding:16px;
+  margin:12px auto;
+  border-radius:10px;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  width:250px;
+  text-decoration:none;
+  font-size:16px;
+}
+
+.dime{background:#3498DB;}
+.offrande{background:#2ECC71;}
+.semence{background:#9B59B6;}
+.facebook{background:#1877F2;}
+
+/* carré pour logo facebook */
+.facebook i{
+  background:white;
+  color:#1877F2;
+  padding:8px;
+  border-radius:4px;
+  font-size:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hidden{display:none;}
+
+/* VIDEO CENTRÉE PARFAITEMENT */
+.video-container{
+  position:relative;
+  padding-bottom:56.25%;
+  height:0;
+  margin:40px auto; /* centrer horizontalement */
+  max-width:700px;
+}
+
+.video-container iframe{
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:12px;
+  display:block;
+}
+
+.qr{
+  width:200px;
+  margin:10px;
+  cursor:pointer;
+}
+
+.label{
+  font-weight:600;
+  margin-top:15px;
+}
+
+textarea{
+  width:80%;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  margin-top:10px;
+}
+
+.footer{
+  font-size:13px;
+  color:#666;
+  margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="MHchelles.jpeg" class="logo">
+
+<h2>Maison d'Honneur Seine et Marne Nord</h2>
+
+<div class="verse" id="verse">
+"Les cieux s'ouvrirent, et il vit l'Esprit de Dieu descendre comme une colombe et venir sur lui. 
+Et voici, une voix fit entendre des cieux ces paroles : Celui-ci est mon Fils bien-aimé, en qui j'ai mis toute mon affection."
+<br><strong>Matthieu 3:16-17</strong>
+</div>
+
+<!-- DONS -->
+<div id="step1">
+  <h3>Dîmes & Offrandes</h3>
+  <div class="button dime" onclick="choisir('Dîme')">Dîmes</div>
+  <div class="button offrande" onclick="choisir('Offrande')">Offrandes</div>
+  <div class="button semence" onclick="choisir('Semence')">Semences</div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-container" id="video">
+  <iframe src="https://www.youtube.com/embed/UlfU7iaASKk?autoplay=1&mute=1" allowfullscreen></iframe>
+</div>
+
+<!-- FACEBOOK -->
+<a class="button facebook" id="facebook" href="https://www.facebook.com/share/1P2jmygmA9/" target="_blank">
+  <i class="fab fa-facebook-f"></i> Facebook
+</a>
+
+<!-- ETAPE 2 -->
+<div id="step2" class="hidden">
+
+  <h3 id="titre"></h3>
+
+  <p>Précisez la nature :</p>
+  <textarea placeholder="Ex: Dîme générale..."></textarea>
+
+  <p>Choisissez un moyen de paiement :</p>
+
+  <div class="label">PayPal</div>
+  <a href="https://www.paypal.me/IbrahimNAHO" target="_blank">
+    <img src="paypal.jpeg" class="qr">
+  </a>
+
+  <div class="label">Wero / Paylib</div>
+  <img src="wero.jpeg" class="qr" onclick="alert('Scannez avec votre application bancaire')">
+
+  <br>
+  <div class="button" style="background:#aaa;" onclick="retour()">Retour</div>
+
+</div>
+
+<hr>
+
+<!-- ADRESSE COMPLÈTE -->
+<div class="footer">
+📍 33 boulevard du Chevalier Bayard, 77100 Meaux<br><br>
+© 2026 Maison d'Honneur Seine et Marne Nord
+</div>
+
+</div>
+
+<script>
+function choisir(type){
+  document.getElementById("titre").innerText = type;
+
+  document.getElementById("step1").style.display = "none";
+  document.getElementById("video").style.display = "none";
+  document.getElementById("facebook").style.display = "none";
+  document.getElementById("verse").style.display = "none";
+
+  document.getElementById("step2").classList.remove("hidden");
+}
+
+function retour(){
+  document.getElementById("step1").style.display = "block";
+  document.getElementById("video").style.display = "block";
+  document.getElementById("facebook").style.display = "flex";
+  document.getElementById("verse").style.display = "block";
+
+  document.getElementById("step2").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
