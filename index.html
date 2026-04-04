@@ -6,7 +6,6 @@
 <title>Maison d'Honneur Seine et Marne Nord</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 body{
@@ -19,8 +18,8 @@ body{
 .container{
   max-width:900px;
   width:95%;
-  margin:30px auto;
-  padding:50px 30px;
+  margin:20px auto;
+  padding:30px 20px;
   background:white;
   border-radius:20px;
   box-shadow:0 8px 25px rgba(0,0,0,0.15);
@@ -28,14 +27,14 @@ body{
 
 .logo{
   width:100%;
-  max-width:500px;
-  margin-bottom:20px;
+  max-width:350px;
+  margin-bottom:15px;
 }
 
 .verse{
   font-style:italic;
   color:#555;
-  margin:20px auto;
+  margin:15px auto;
   max-width:600px;
   line-height:1.6;
 }
@@ -44,14 +43,13 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:12px;
   padding:16px;
-  margin:12px auto;
-  border-radius:10px;
+  margin:10px auto;
+  border-radius:12px;
   color:white;
   font-weight:600;
-  cursor:pointer;
-  width:250px;
+  width:100%;
+  max-width:300px;
   text-decoration:none;
   font-size:16px;
 }
@@ -61,38 +59,25 @@ body{
 .semence{background:#9B59B6;}
 .facebook{background:#1877F2;}
 
-.facebook i{
-  background:white;
-  color:#1877F2;
-  padding:8px;
-  border-radius:4px;
-  font-size:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
 .hidden{display:none;}
 
+/* VIDEO CENTRÉE */
 .video-container{
-  position:relative;
-  padding-bottom:56.25%;
-  height:0;
-  margin:40px auto;
-  max-width:700px;
+  display:flex;
+  justify-content:center;
+  margin:25px 0;
 }
 
 .video-container iframe{
-  position:absolute;
   width:100%;
-  height:100%;
+  max-width:700px;
+  height:400px;
   border-radius:12px;
-  display:block;
 }
 
 .qr{
-  width:200px;
-  margin:10px;
+  width:180px;
+  margin:15px auto;
   cursor:pointer;
 }
 
@@ -101,12 +86,26 @@ body{
   margin-top:15px;
 }
 
+.info{
+  font-size:14px;
+  color:#666;
+  margin-top:8px;
+  line-height:1.4;
+}
+
+.phone{
+  font-weight:600;
+  margin-top:10px;
+  cursor:pointer;
+  color:#0070ba;
+  text-decoration:underline;
+}
+
 textarea{
-  width:80%;
+  width:90%;
   padding:10px;
   border-radius:8px;
   border:1px solid #ccc;
-  margin-top:10px;
 }
 
 .footer{
@@ -121,20 +120,24 @@ textarea{
 
 <div class="container">
 
-<!-- LOGO -->
-<img src="MHChelles.jpeg" class="logo" alt="Logo Maison d'Honneur">
+<img src="MHChelles.jpeg" class="logo" alt="Logo">
 
 <h2>Maison d'Honneur Seine et Marne Nord</h2>
 
+<!-- VERSET -->
 <div class="verse" id="verse">
-"Apportez à la maison du trésor toutes les dîmes, Afin qu'il y ait de la nourriture dans ma maison; Mettez-moi de la sorte à l'épreuve, Dit l'Eternel des armées. 
-Et vous verrez si je n'ouvre pas pour vous les écluses des cieux, Si je ne répands pas sur vous la bénédiction en abondance."
-<br><strong>Malachie 3:10</strong>
+Apportez à la maison du trésor toutes les dîmes,<br>
+afin qu'il y ait de la nourriture dans ma maison ;<br>
+mettez-moi de la sorte à l'épreuve, dit l'Éternel des armées.<br>
+Et vous verrez si je n'ouvre pas pour vous les écluses des cieux,<br>
+si je ne répands pas sur vous la bénédiction en abondance.<br>
+<strong>Malachie 3:10</strong>
 </div>
 
-<!-- DONS -->
+<!-- ETAPE 1 -->
 <div id="step1">
   <h3>Dîmes & Offrandes</h3>
+
   <div class="button dime" onclick="choisir('Dîme')">Dîmes</div>
   <div class="button offrande" onclick="choisir('Offrande')">Offrandes</div>
   <div class="button semence" onclick="choisir('Semence')">Semences</div>
@@ -147,7 +150,7 @@ Et vous verrez si je n'ouvre pas pour vous les écluses des cieux, Si je ne rép
 
 <!-- FACEBOOK -->
 <a class="button facebook" id="facebook" href="https://www.facebook.com/share/1P2jmygmA9/" target="_blank">
-  <i class="fab fa-facebook-f"></i> Facebook
+  Facebook
 </a>
 
 <!-- ETAPE 2 -->
@@ -158,24 +161,54 @@ Et vous verrez si je n'ouvre pas pour vous les écluses des cieux, Si je ne rép
   <p>Précisez la nature :</p>
   <textarea placeholder="Ex: Dîme générale..."></textarea>
 
-  <p>Choisissez un moyen de paiement :</p>
+  <p style="margin-top:20px;">Choisissez un moyen de paiement :</p>
 
-  <div class="label">PayPal</div>
-  <a href="https://www.paypal.me/IbrahimNAHO" target="_blank">
-    <img src="PAYPAL.jpeg" class="qr" alt="PayPal">
+  <!-- PAYPAL -->
+  <a href="https://www.paypal.me/IbrahimNAHO" target="_blank"
+     class="button" style="background:#0070ba;">
+     💳 Payer avec PayPal
   </a>
 
-  <div class="label">Wero / Paylib</div>
-  <img src="WERO.jpeg" class="qr" alt="Wero" onclick="alert('Scannez avec votre application bancaire')">
+  <div class="info">✔ Paiement immédiat sécurisé</div>
+
+  <hr style="margin:25px 0;">
+
+  <!-- WERO -->
+  <div class="label">🏦 Wero / Paylib</div>
+
+  <!-- QR CLIQUABLE -->
+  <img src="WERO.jpeg" class="qr" alt="Wero"
+       onclick="alert('Sur Android : ouverture possible automatique. Sur iPhone/PC : utilisez votre application bancaire pour scanner ou entrez le numéro.')">
+
+  <!-- NUMERO COPIABLE -->
+  <div class="phone" id="weroNumber" onclick="copyNumber()">
+    06 98 75 42 12 (cliquez pour copier)
+  </div>
+
+  <!-- EXPLICATION -->
+  <div class="info" id="msg-android" style="display:none;">
+🤖 Android :<br>
+Cliquez sur le QR code pour choisir votre banque et payer directement
+  </div>
+
+  <div class="info" id="msg-ios" style="display:none;">
+📱 iPhone / PC :<br>
+Ouvrez votre application bancaire puis scannez ce QR code ou entrez le numéro
+  </div>
+
+  <div class="button" style="background:#444;"
+       onclick="alert('Ouvrez votre application bancaire puis utilisez la fonction scanner ou entrez le numéro copié')">
+       📱 Ouvrir mon application bancaire
+  </div>
 
   <br>
+
   <div class="button" style="background:#aaa;" onclick="retour()">Retour</div>
 
 </div>
 
 <hr>
 
-<!-- ADRESSE COMPLÈTE -->
 <div class="footer">
 📍 33 boulevard du Chevalier Bayard, 77100 Meaux<br><br>
 © 2026 Maison d'Honneur Seine et Marne Nord
@@ -184,6 +217,7 @@ Et vous verrez si je n'ouvre pas pour vous les écluses des cieux, Si je ne rép
 </div>
 
 <script>
+// Gestion étape 1 / 2
 function choisir(type){
   document.getElementById("titre").innerText = type;
 
@@ -195,13 +229,33 @@ function choisir(type){
   document.getElementById("step2").classList.remove("hidden");
 }
 
+// Retour étape 1
 function retour(){
   document.getElementById("step1").style.display = "block";
-  document.getElementById("video").style.display = "block";
+  document.getElementById("video").style.display = "flex";
   document.getElementById("facebook").style.display = "flex";
   document.getElementById("verse").style.display = "block";
 
   document.getElementById("step2").classList.add("hidden");
+}
+
+// Détection Android / iPhone
+function detectDevice(){
+  const ua = navigator.userAgent;
+  if(/android/i.test(ua)){
+    document.getElementById("msg-android").style.display = "block";
+  } else {
+    document.getElementById("msg-ios").style.display = "block";
+  }
+}
+window.onload = detectDevice;
+
+// Copier numéro Wero
+function copyNumber(){
+  const number = document.getElementById("weroNumber").innerText.replace(" (cliquez pour copier)","");
+  navigator.clipboard.writeText(number).then(()=>{
+    alert("Numéro Wero copié : " + number);
+  });
 }
 </script>
 
